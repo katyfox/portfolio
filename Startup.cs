@@ -39,6 +39,8 @@ namespace portfolio
             services.AddDbContext<BlogContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("PortfolioDatabase")));
 
+            services.BuildServiceProvider().GetService<BlogContext>().Database.Migrate();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Portfolio API", Version = "v1" });
@@ -74,16 +76,6 @@ namespace portfolio
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio API V1");
             });
-
-            using (var serviceScope = app.ApplicationServices
-                .GetRequiredService<IServiceScopeFactory>()
-                .CreateScope())
-            {
-                using (var context = serviceScope.ServiceProvider.GetService<BlogContext>())
-                {
-                    context.Database.Migrate();
-                }
-            }
         }
     }
 }
