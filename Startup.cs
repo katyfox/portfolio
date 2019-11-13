@@ -39,7 +39,7 @@ namespace portfolio
             services.AddDbContext<BlogContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("PortfolioDatabase")));
 
-            services.BuildServiceProvider().GetService<BlogContext>().Database.Migrate();
+            // services.BuildServiceProvider().GetService<BlogContext>().Database.Migrate();
 
             services.AddSwaggerGen(c =>
             {
