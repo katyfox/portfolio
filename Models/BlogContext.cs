@@ -4,11 +4,11 @@ namespace portfolio.Models
 {
     public class BlogContext : DbContext
     {
-        public DbSet<BlogPost> BlogPosts { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public BlogContext(DbContextOptions options) :
+            base(options)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-FEKCTRH;Database=portfolio;User Id=sa;Password=Password;");
         }
+
+        public DbSet<BlogPost> BlogPosts { get; set; }
     }
 }
