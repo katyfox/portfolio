@@ -37,7 +37,7 @@ namespace portfolio
                     options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
             services.AddDbContext<BlogContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("PortfolioDatabase")));
 
             services.BuildServiceProvider().GetService<BlogContext>().Database.Migrate();
 
