@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -81,17 +82,26 @@ namespace portfolio.Controllers
 
         // POST: api/BlogPosts
         [HttpPost]
-        public async Task<IActionResult> PostBlogPost([FromBody] BlogPost blogPost)
+        public async Task<IActionResult> PostBlogPost([FromBody] BlogPostCreationDto blogPost)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.BlogPosts.Add(blogPost);
+            BlogPost newPost = new BlogPost
+            {
+                Date = DateTime.Now,
+                Content = blogPost.Content,
+                ImagePath = blogPost.ImagePath,
+                Category = blogPost.Category,
+                Author = blogPost.Author
+            };
+
+            _context.BlogPosts.Add(newPost);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBlogPost", new { id = blogPost.ID }, blogPost);
+            return CreatedAtAction("GetBlogPost", new { id = newPost.ID }, newPost);
         }
 
         // DELETE: api/BlogPosts/5
