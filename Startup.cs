@@ -74,6 +74,16 @@ namespace portfolio
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio API V1");
             });
+
+            using (var serviceScope = app.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<BlogContext>())
+                {
+                    context.Database.Migrate();
+                }
+            }
         }
     }
 }
