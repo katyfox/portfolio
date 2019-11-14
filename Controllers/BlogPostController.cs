@@ -10,11 +10,11 @@ namespace portfolio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BlogPostsApiController : ControllerBase
+    public class BlogPostController : ControllerBase
     {
         private readonly BlogContext _context;
 
-        public BlogPostsApiController(BlogContext context)
+        public BlogPostController(BlogContext context)
         {
             _context = context;
         }

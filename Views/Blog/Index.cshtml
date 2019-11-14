@@ -1,8 +1,23 @@
 ﻿
 @{
     ViewData["Title"] = "Blog";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model List<BlogPost>
+
+
 <h2>Blog</h2>
+
+<div class="center-block">
+    @foreach (var item in Model)
+    {
+
+        <span>Posted by @item.Author on @item.GetFormattedDate()</span>
+        <br />
+        <br />
+        <span>@item.Content</span>
+        <br />
+        <br />
+    }
+</div>
 

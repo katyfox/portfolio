@@ -1,12 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using portfolio.Models;
 
 namespace portfolio.Controllers
 {
     public class BlogController : Controller
     {
+        private readonly BlogContext _context;
+
+        public BlogController(BlogContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var posts = _context.BlogPosts.ToList();
+
+            return View(posts);
         }
     }
 }

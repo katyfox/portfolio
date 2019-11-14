@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace portfolio.Models
 {
@@ -10,5 +12,10 @@ namespace portfolio.Models
         public string ImagePath { get; set; }
         public BlogPostCategory Category { get; set; }
         public string Author { get; set; }
+
+        public string GetFormattedDate()
+        {
+            return this.Date.ToString("MM/dd/yyyy");
+        }
     }
 }
