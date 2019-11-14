@@ -17,7 +17,7 @@ namespace portfolio.Controllers
 
         public IActionResult Index()
         {
-            var posts = _context.BlogPosts.ToList();
+            var posts = _context.BlogPosts.OrderByDescending(p => p.Date).ToList();
 
             return View(posts);
         }
