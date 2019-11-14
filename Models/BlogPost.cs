@@ -8,6 +8,7 @@ namespace portfolio.Models
     {
         public int ID { get; set; }
         public DateTime Date { get; set; }
+        public string Title { get; set; }
         public string Content { get; set; }
         public string ImagePath { get; set; }
         public BlogPostCategory Category { get; set; }
@@ -15,7 +16,7 @@ namespace portfolio.Models
 
         public string GetFormattedDate()
         {
-            return this.Date.ToString("MM/dd/yyyy");
+            return this.Date.ToString("Y");
         }
     }
 }

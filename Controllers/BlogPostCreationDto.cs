@@ -4,6 +4,7 @@ namespace portfolio.Controllers
 {
     public class BlogPostCreationDto
     {
+        public string Title { get; set; }
         public string Content { get; set; }
         public string ImagePath { get; set; }
         public BlogPostCategory Category { get; set; }

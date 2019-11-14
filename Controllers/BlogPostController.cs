@@ -91,6 +91,7 @@ namespace portfolio.Controllers
 
             BlogPost newPost = new BlogPost
             {
+                Title = blogPost.Title,
                 Date = DateTime.Now,
                 Content = blogPost.Content,
                 ImagePath = blogPost.ImagePath,

@@ -11,8 +11,9 @@
 <div class="center-block">
     @foreach (var item in Model)
     {
-
-        <span>Posted by @item.Author on @item.GetFormattedDate()</span>
+        <h3>@item.Title</h3>
+        <br/>
+        <span><i>By @item.Author - @item.GetFormattedDate()</i></span>
         <br />
         <br />
         <span>@item.Content</span>
