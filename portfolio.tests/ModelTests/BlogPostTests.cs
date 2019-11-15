@@ -26,7 +26,7 @@ namespace portfolio.tests.ModelTests
         [Test]
         public void GetFormattedDate_DateSet_ReturnsProperFormat()
         {
-            string expected = DateTime.Now.ToString("T");
+            string expected = DateTime.Now.ToString("Y");
 
             Assert.IsTrue(expected.Equals(_post.GetFormattedDate()), 
                 "BlogPost GetFormattedDate() didn't return the expected format. Expected: {0}; Actual: {1}", expected, _post.GetFormattedDate());
