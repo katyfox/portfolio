@@ -9,16 +9,16 @@
 <div class="center-block">
     @foreach (var item in Model)
     {
-        <h3>@item.Title</h3>
+        <h2 style="font-family: 'Vidaloka', serif;">@item.Title</h2>
         <br />
         @if (!String.IsNullOrEmpty(item.ImagePath) && !item.ImagePath.Equals("string"))
         {
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <span><i>By @item.Author - @item.GetFormattedDate()</i></span>
+                    <span style="font-family: 'Frank Ruhl Libre', serif;"><i>By @item.Author - @item.GetFormattedDate()</i></span>
                     <br />
                     <br />
-                    <span>@item.Content</span>
+                    <span style="font-family: 'Frank Ruhl Libre', serif;">@item.Content</span>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="center-block">
@@ -34,10 +34,10 @@
         }
         else
         {
-            <span><i>By @item.Author - @item.GetFormattedDate()</i></span>
+            <span stlye="font-family: 'Frank Ruhl Libre', serif;"><i>By @item.Author - @item.GetFormattedDate()</i></span>
             <br />
             <br />
-            <span>@item.Content</span>
+            <span style="font-family: 'Frank Ruhl Libre', serif;">@item.Content</span>
             <br />
             <hr />
             <br />
