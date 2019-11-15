@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
 
 namespace portfolio.Models
 {
@@ -17,6 +15,11 @@ namespace portfolio.Models
         public string GetFormattedDate()
         {
             return this.Date.ToString("Y");
+        }
+
+        public bool PostHasImage()
+        {
+            return (!String.IsNullOrEmpty(this.ImagePath) && !this.ImagePath.Equals("string"));
         }
     }
 }

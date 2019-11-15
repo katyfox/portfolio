@@ -23,7 +23,7 @@ namespace portfolio.Controllers
         [HttpGet]
         public IEnumerable<BlogPost> GetBlogPosts()
         {
-            return _context.BlogPosts;
+            return _context.BlogPosts.OrderByDescending(p => p.Date);
         }
 
         // GET: api/BlogPosts/5
@@ -77,12 +77,12 @@ namespace portfolio.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(blogPost);
         }
 
         // POST: api/BlogPosts
         [HttpPost]
-        public async Task<IActionResult> PostBlogPost([FromBody] BlogPostCreationDto blogPost)
+        public async Task<IActionResult> PostBlogPost([FromBody] BlogPostCreateDto blogPost)
         {
             if (!ModelState.IsValid)
             {
@@ -91,8 +91,8 @@ namespace portfolio.Controllers
 
             BlogPost newPost = new BlogPost
             {
-                Title = blogPost.Title,
                 Date = DateTime.Now,
+                Title = blogPost.Title,
                 Content = blogPost.Content,
                 ImagePath = blogPost.ImagePath,
                 Category = blogPost.Category,

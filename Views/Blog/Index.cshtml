@@ -7,40 +7,49 @@
 
 <br/>
 <div class="center-block">
-    @foreach (var item in Model)
+
+    @if (Model != null)
     {
-        <h2 style="font-family: 'Vidaloka', serif; text-align: center;">@item.Title</h2>
-        <p style="font-family: 'Frank Ruhl Libre', serif; text-align: center;"><i>By @item.Author - @item.GetFormattedDate()</i></p>
-        @if (!String.IsNullOrEmpty(item.ImagePath) && !item.ImagePath.Equals("string"))
+        @foreach (var post in Model)
         {
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <br />
-                    <span style="font-family: 'Frank Ruhl Libre', serif;">@item.Content</span>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="center-block">
+            <h2 class="portfolio-site-title">@post.Title</h2>
+            <p class="blog-post-metadata"><i>By @post.Author - @post.GetFormattedDate()</i></p>
+
+            @if (post.PostHasImage())
+            {
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
                         <br />
-                        <br/>
-                        <img src="@item.ImagePath" alt="@item.Title image" class="img-responsive center-block" style="max-width: 80%; width: 100%; vertical-align: middle" />
+                        <span class="portfolio-site-content">@post.Content</span>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="center-block">
+                            <br />
+                            <br />
+                            <img src="@post.ImagePath" alt="@post.Title image" class="img-responsive center-block blog-post-image" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <br />
-            <hr />
-            <br />
-            <br />
-        }
-        else
-        {
-            <br />
-            <br />
-            <span style="font-family: 'Frank Ruhl Libre', serif;">@item.Content</span>
-            <br />
-            <hr />
-            <br />
-            <br />
+                <br />
+                <hr />
+                <br />
+                <br />
+            }
+            else
+            {
+                <br />
+                <br />
+                <span class="portfolio-site-content">@post.Content</span>
+                <br />
+                <hr />
+                <br />
+                <br />
+            }
         }
     }
-</div>
+    else
+    {
+        <h2 class="portfolio-site-title">No Blog Posts Yet - Check Back Soon!</h2>
+    }
 
+</div>

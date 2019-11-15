@@ -1,5 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
+﻿
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -9,44 +8,76 @@ body {
     background-attachment: fixed;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
+.rendered-body-div {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    background-color: white;
+    background: rgba(255,255,255,0.98);
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 4%;
+}
+
 .navbar-brand {
     font-size: 40px;
+    font-family: 'Vidaloka', serif;
+    color: indianred;
 }
 
 .navbar {
     min-height: 80px;
+    background-color: white;
 }
 
-.navbar.nav.navbar-nav.navbar-right li a {
-    color: black;
-}
-
-/* Carousel */
 .carousel-caption p {
     font-size: 20px;
     line-height: 1.4;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
 }
 
-/* QR code generator */
+.portfolio-site-title {
+    font-family: 'Vidaloka', serif;
+    text-align: center;
+}
+
+.blog-post-metadata {
+    font-family: 'Frank Ruhl Libre', serif;
+    text-align: center;
+}
+
+.portfolio-site-content {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 18px;
+}
+
+.blog-post-image {
+    max-width: 80%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.about-me-image {
+    max-width: 350px;
+    width: 100%;
+    vertical-align: middle
+}
+
 #qrCode {
     margin: 15px;
 }
 
-/* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
-    /* Hide captions */
     .carousel-caption {
         display: none;
     }
