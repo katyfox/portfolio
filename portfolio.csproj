@@ -6,6 +6,12 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\images\art-artist-black-and-white-blank-265047.jpg" />
+    <Content Remove="wwwroot\images\background-blank-empty-light-62693.jpg" />
+    <Content Remove="wwwroot\images\black-textile-952670.jpg" />
+    <Content Remove="wwwroot\images\brown-knitted-textile-1487703.jpg" />
+    <Content Remove="wwwroot\images\red-pattern-texture-lines-4941.jpg" />
+    <Content Remove="wwwroot\images\white-walls-1764702.jpg" />
+    <Content Remove="wwwroot\images\yellow-vines-on-gray-concrete-wall-1029609.jpg" />
   </ItemGroup>
 
   <ItemGroup>
