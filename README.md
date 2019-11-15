@@ -1,9 +1,9 @@
 # portfolio
 [![Build Status](https://dev.azure.com/katysorourke/katy-devops-project/_apis/build/status/katyfoxdev%20-%20CI?branchName=master)](https://dev.azure.com/katysorourke/katy-devops-project/_build/latest?definitionId=11&branchName=master)
+https://katyfoxdev.azurewebsites.net/
 
 ## About this Project
-This site is itself a sample of my work, and that I can use as a blog and a personal portfolio. It currently has a Blog page, an About Me page, 
-and a BlogPost API to manage my blog posts. The portfolio piece will be built last. 
+This site itself is a sample of my work, and it's also a site that I can use as a blog and a personal portfolio. The portfolio piece will be built last. 
 
 ## Technology 
 This is a ASP.NET Core MVC Web Application. It uses .NET Core 2.1.1. 
