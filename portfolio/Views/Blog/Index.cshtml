@@ -15,7 +15,7 @@
             <h2 class="portfolio-site-title">@post.Title</h2>
             <p class="blog-post-metadata"><i>By @post.Author - @post.GetFormattedDate()</i></p>
 
-            @if (post.PostHasImage())
+            @if (post.HasImage())
             {
                 <div class="row">
                     <div class="col-lg-6 col-md-6">

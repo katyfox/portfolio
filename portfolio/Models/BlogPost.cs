@@ -17,9 +17,9 @@ namespace portfolio.Models
             return this.Date.ToString("Y");
         }
 
-        public bool PostHasImage()
+        public bool HasImage()
         {
-            return (!String.IsNullOrEmpty(this.ImagePath) && !this.ImagePath.Equals("string"));
+            return (!String.IsNullOrWhiteSpace(this.ImagePath) && !this.ImagePath.Equals("string"));
         }
     }
 }
