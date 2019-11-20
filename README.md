@@ -34,3 +34,4 @@ pieces of functionality that are completed are listed below.
 11/19/2019
 - Integrated Okta authentication, which protects my swagger endpoints. The rest of the app is accessible, and the login link will soon only be present on the Blog Post Management page that I need to create
 - Moved sensitive data to the appsettings.Development.json and removed that file from source control 
+- Updated About Me page with real content and new photo 
