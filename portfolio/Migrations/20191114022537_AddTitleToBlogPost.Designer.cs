@@ -23,7 +23,7 @@ namespace portfolio.Migrations
 
             modelBuilder.Entity("portfolio.Models.BlogPost", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -39,7 +39,7 @@ namespace portfolio.Migrations
 
                     b.Property<string>("Title");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("BlogPosts");
                 });

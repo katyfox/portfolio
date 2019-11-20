@@ -56,7 +56,7 @@ namespace portfolio.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != blogPost.ID)
+            if (id != blogPost.Id)
             {
                 return BadRequest();
             }
@@ -104,7 +104,7 @@ namespace portfolio.Controllers
             _context.BlogPosts.Add(newPost);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBlogPost", new { id = newPost.ID }, newPost);
+            return CreatedAtAction("GetBlogPost", new { id = newPost.Id }, newPost);
         }
 
         // DELETE: api/BlogPosts/5
@@ -130,7 +130,7 @@ namespace portfolio.Controllers
 
         private bool BlogPostExists(int id)
         {
-            return _context.BlogPosts.Any(e => e.ID == id);
+            return _context.BlogPosts.Any(e => e.Id == id);
         }
     }
 }
