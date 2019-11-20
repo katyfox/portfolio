@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Manage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a onclick="document.getElementById('logout_form').submit();" style="cursor: pointer;">Log out</a>
+   
+    <form asp-controller="Account" asp-action="Logout" method="post" id="logout_form"></form>
+
+    <a asp-area="" asp-controller="BlogPosts" asp-action="Create" style="color:black">Manage Blog Posts</a><br/>
+    <a asp-area="" asp-controller="BlogPostTags" asp-action="Create" style="color:black">Manage Tags</a>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Log in</a>
+}
+

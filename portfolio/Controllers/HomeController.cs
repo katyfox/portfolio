@@ -23,6 +23,11 @@ namespace portfolio.Controllers
             return View();
         }
 
+        public IActionResult Manage()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

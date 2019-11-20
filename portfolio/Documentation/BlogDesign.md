@@ -9,11 +9,21 @@ Blog Post
 - Content
 - Image (Path)
 - Category (soon to be replaced with tags)
+- Tags
 - Author
+
+Blog Post Tag
+- ID
+- Name
+
+There is a many-many relationship between Blog Post and Blog Post Tag
 
 ## Considerations
 
-I'd like to be able to support blog posts with pictures intermittently included throughout the blog post. I wonder if a BlogPostPart concept would work, where each blog is a collection of BlogPostParts, each containing a block of text and a photo. That way I'd be able to iteratively render each blog part for each post to position the images properly. 
+I'd like to be able to support blog posts with pictures intermittently included throughout the blog post. 
+I wonder if a BlogPostPart concept would work, where each blog is a collection of BlogPostParts, each 
+containing a block of text and a photo. That way I'd be able to iteratively render each blog part for each 
+post to position the images properly. 
 
 ## Resources
 This resource is great for applying migrations when changing the model

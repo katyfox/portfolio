@@ -13,7 +13,7 @@ namespace portfolio.Controllers
                 return Challenge(OktaDefaults.MvcAuthenticationScheme);
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Manage", "Home");
         }
 
         [HttpPost]

@@ -1,4 +1,5 @@
-﻿using portfolio.Models;
+﻿using System.Collections.Generic;
+using portfolio.Models;
 
 namespace portfolio.Controllers
 {
@@ -8,6 +9,7 @@ namespace portfolio.Controllers
         public string Content { get; set; }
         public string ImagePath { get; set; }
         public BlogPostCategory Category { get; set; }
+        public ICollection<BlogPostBlogPostTag> BlogPostTags { get; set; }
         public string Author { get; set; }
     }
 }

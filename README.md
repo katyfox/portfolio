@@ -23,6 +23,11 @@ if any tests fail.
 Although this site is released with every commit to GitHub, the notable
 pieces of functionality that are completed are listed below.
 
+11/20/2019
+- Hid the Blog section for now until I have the management piece fleshed out
+- Added the basics for creating, updating, deleting, and listing the blog posts 
+- Added the concept of blog post tag, so each post can be tagged with different categories 
+
 11/19/2019
 - Integrated Okta authentication, which protects my swagger endpoints. The rest of the app is accessible, and the login link will soon only be present on the Blog Post Management page that I need to create
 - Moved sensitive data to the appsettings.Development.json and removed that file from source control 
