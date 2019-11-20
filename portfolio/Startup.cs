@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using portfolio.Models;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Okta.AspNetCore;
 
 namespace portfolio
 {
@@ -30,21 +32,53 @@ namespace portfolio
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+            {
                 services.AddDbContext<BlogContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
-            services.AddDbContext<BlogContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("PortfolioDatabase")));
+                services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = OktaDefaults.MvcAuthenticationScheme;
+                })
+                .AddCookie()
+                .AddOktaMvc(new OktaMvcOptions
+                {
+                    OktaDomain = Configuration["OktaDomain"],
+                    ClientId = Configuration["OktaClientId"],
+                    ClientSecret = Configuration["OktaClientSecret"]
+                });
+            }
+            else
+            {
+                services.AddDbContext<BlogContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("PortfolioDatabase")));
 
+                services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = OktaDefaults.MvcAuthenticationScheme;
+                })
+                .AddCookie()
+                .AddOktaMvc(new OktaMvcOptions
+                {
+                    OktaDomain = Configuration["Okta:Domain"],
+                    ClientId = Configuration["Okta:ClientId"],
+                    ClientSecret = Configuration["Okta:ClientSecret"]
+                });
+            }
+            
             services.BuildServiceProvider().GetService<BlogContext>().Database.Migrate();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Portfolio API", Version = "v1" });
             });
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +98,7 @@ namespace portfolio
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
