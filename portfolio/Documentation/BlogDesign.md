@@ -1,4 +1,4 @@
-﻿#Architecture of the Blog Component
+#Architecture of the Blog Component
 
 ## General Components
 
