@@ -49,7 +49,7 @@ namespace portfolio.Controllers
 
         // PUT: api/BlogPosts/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBlogPost([FromRoute] int id, [FromBody] BlogPost blogPost)
+        public async Task<IActionResult> PutBlogPost([FromRoute] Guid id, [FromBody] BlogPost blogPost)
         {
             if (!ModelState.IsValid)
             {
@@ -128,7 +128,7 @@ namespace portfolio.Controllers
             return Ok(blogPost);
         }
 
-        private bool BlogPostExists(int id)
+        private bool BlogPostExists(Guid id)
         {
             return _context.BlogPosts.Any(e => e.Id == id);
         }

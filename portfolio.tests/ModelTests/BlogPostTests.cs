@@ -14,7 +14,7 @@ namespace portfolio.tests.ModelTests
         {
             _post = new BlogPost
             {
-                Id = 1,
+                Id = new Guid(),
                 Date = DateTime.Now,
                 Title = "Sample Blog Post",
                 Content = "This is a sample blog post for testing",
