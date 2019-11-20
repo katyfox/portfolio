@@ -97,7 +97,6 @@ namespace portfolio.Controllers
                 Title = blogPost.Title,
                 Content = blogPost.Content,
                 ImagePath = blogPost.ImagePath,
-                Category = blogPost.Category,
                 Author = blogPost.Author
             };
 
