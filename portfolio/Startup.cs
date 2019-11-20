@@ -103,7 +103,7 @@ namespace portfolio
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Blog}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=About}/{id?}");
             });
 
             app.UseSwagger();
