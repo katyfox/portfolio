@@ -19,19 +19,19 @@ if any tests fail.
 Although this site is released with every commit to GitHub, the notable
 pieces of functionality that are completed are listed below.
 
-11/13/2019
-- Blog page to view blog posts
-- BlogPost API for managing blog posts
-- About me page
+11/19/2019
+- Integrated Okta authentication, which protects my swagger endpoints. The rest of the app is accessible, and the login link will soon only be present on the Blog Post Management page that I need to create
+- Moved sensitive data to the appsettings.Development.json and removed that file from source control 
+- Updated About Me page with real content and new photo 
+
+11/15/2019
+- Unit tests 
 
 11/14/2019
 - Styling enhancements
 - Site background photo 
 
-11/15/2019
-- Unit tests 
-
-11/19/2019
-- Integrated Okta authentication, which protects my swagger endpoints. The rest of the app is accessible, and the login link will soon only be present on the Blog Post Management page that I need to create
-- Moved sensitive data to the appsettings.Development.json and removed that file from source control 
-- Updated About Me page with real content and new photo 
+11/13/2019
+- Blog page to view blog posts
+- BlogPost API for managing blog posts
+- About me page
