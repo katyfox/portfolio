@@ -1,4 +1,5 @@
-﻿@model IEnumerable<portfolio.Models.BlogPost>
+﻿@using Microsoft.CodeAnalysis.CSharp.Syntax
+@model IEnumerable<portfolio.Models.BlogPost>
 
 @{
     ViewData["Title"] = "Index";
@@ -28,6 +29,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Author)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlogPostTags)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -48,6 +52,19 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @if (item.BlogPostTags != null)
+                {
+                    @foreach (var tag in item.BlogPostTags)
+                    {
+                        <span>@tag.BlogPostTag.TagName</span><br/>
+                    }
+                }
+                else
+                {
+                    <span>No tags</span>
+                }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

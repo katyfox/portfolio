@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using portfolio.Models;
 
 namespace portfolio.Models
 {
@@ -25,6 +26,8 @@ namespace portfolio.Models
                 .WithMany(c => c.BlogPostsTags)
                 .HasForeignKey(bc => bc.BlogPostTagId);
         }
+
+        public DbSet<portfolio.Models.BlogPostBlogPostTag> BlogPostBlogPostTag { get; set; }
 
     }
 }

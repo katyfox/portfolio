@@ -23,7 +23,11 @@ namespace portfolio.Controllers
         // GET: BlogPosts
         public async Task<IActionResult> Index()
         {
-            return View(await _context.BlogPosts.ToListAsync());
+            var posts = await _context.BlogPosts
+                .Include(e => e.BlogPostTags)
+                .ThenInclude(e => e.BlogPostTag).ToListAsync();
+
+            return View(posts);
         }
 
         // GET: BlogPosts/Details/5
@@ -55,11 +59,12 @@ namespace portfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Date,Title,Content,ImagePath,Category,Author")] BlogPost blogPost)
+        public async Task<IActionResult> Create([Bind("Id,Title,Content,ImagePath,Category,Author")] BlogPost blogPost)
         {
             if (ModelState.IsValid)
             {
                 blogPost.Id = Guid.NewGuid();
+                blogPost.Date = DateTime.Now;
                 _context.Add(blogPost);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -99,6 +104,7 @@ namespace portfolio.Controllers
             {
                 try
                 {
+                    // do we want to update the date here?
                     _context.Update(blogPost);
                     await _context.SaveChangesAsync();
                 }

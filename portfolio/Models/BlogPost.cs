@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace portfolio.Models
 {
@@ -10,6 +11,7 @@ namespace portfolio.Models
         public string Title { get; set; }
         public string Content { get; set; }
         public string ImagePath { get; set; }
+        [DisplayName("Tags")]
         public ICollection<BlogPostBlogPostTag> BlogPostTags { get; set; }
         public string Author { get; set; }
 

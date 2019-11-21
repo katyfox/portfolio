@@ -61,6 +61,11 @@ body {
     font-size: 18px;
 }
 
+.about-content {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 17px;
+}
+
 .blog-post-image {
     max-width: 80%;
     width: 100%;
