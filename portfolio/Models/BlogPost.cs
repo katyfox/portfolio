@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace portfolio.Models
 {
@@ -9,6 +10,7 @@ namespace portfolio.Models
         public Guid Id { get; set; }
         public DateTime Date { get; set; }
         public string Title { get; set; }
+        [DataType(DataType.MultilineText)]
         public string Content { get; set; }
         public string ImagePath { get; set; }
         [DisplayName("Tags")]

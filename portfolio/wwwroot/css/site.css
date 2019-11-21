@@ -59,6 +59,7 @@ body {
 .portfolio-site-content {
     font-family: 'Frank Ruhl Libre', serif;
     font-size: 18px;
+    white-space: pre-wrap;
 }
 
 .about-content {
