@@ -4,7 +4,7 @@
 https://katyfoxdev.azurewebsites.net/
 
 ## About this Project
-This site itself is a sample of my work, and it's also a site that I can use as a blog and a personal portfolio. The portfolio piece will be built last. 
+The vision for this site is to be my lifestyle blog. I want to be able to blog about nutrition, recipes, fitness, self-care, engineering, pregnancy, motherhood, etc. I want to be able to make it beautiful, so it represents me and so I can enjoy working on it each weekend. The primary purpose is to be a creative outlet for me, almost like a diary. It's not necessarily intended to bring a lot of viewers to it or to become popular. However, I do still want it to be easy for a viewer to navigate, find content, comment on blog posts, contact me via email without displaying my personal email address. The secondary purpose of the blog is to be able to give other people a window into me as a person in cases where I'm applying for a new job. I'd love for a potential employer or new team to be able to take a look at my blog and get a sense of who I am, which is also where the porfolio aspect comes in. The third purpose of this site is to be able to development portfolio. However, I do not have a lot of projects at this point that I'd like to showcase, so no need to worry about that now. 
 
 ## Technology 
 This is a ASP.NET Core MVC Web Application that uses .NET Core 2.1.1, 
